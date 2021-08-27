@@ -1,0 +1,2 @@
+string  variable
+StateWithProb[] states

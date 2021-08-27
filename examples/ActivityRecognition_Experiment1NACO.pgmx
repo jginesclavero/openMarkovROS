@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="BayesianNetwork">
+    <Comment showWhenOpeningNetwork="false"><![CDATA[<<Double click to add/modify comment>>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="---" unit="---" />
+    </DecisionCriteria>
+    <Properties />
+    <Variables>
+      <Variable name="HumanLocalization" type="finiteStates" role="chance">
+        <Coordinates x="888" y="437" />
+        <States>
+          <State name="outdoor" />
+          <State name="bathroom" />
+          <State name="kitchen" />
+          <State name="living_room" />
+          <State name="bedroom" />
+        </States>
+      </Variable>
+      <Variable name="ADL" type="finiteStates" role="chance">
+        <Coordinates x="1256" y="437" />
+        <States>
+          <State name="SexualActivity" />
+          <State name="Locomotion" />
+          <State name="PersonalHygiene" />
+          <State name="PersonalDeviceCare" />
+          <State name="FunctionalMobility" />
+          <State name="Feeding" />
+          <State name="Eating" />
+          <State name="Dressing" />
+          <State name="Toileting" />
+          <State name="Bath" />
+        </States>
+      </Variable>
+      <Variable name="TimeOfDay" type="finiteStates" role="chance">
+        <Coordinates x="493" y="435" />
+        <States>
+          <State name="0" />
+          <State name="1" />
+          <State name="2" />
+          <State name="3" />
+          <State name="4" />
+          <State name="5" />
+          <State name="6" />
+          <State name="7" />
+          <State name="8" />
+          <State name="9" />
+          <State name="10" />
+          <State name="11" />
+          <State name="12" />
+          <State name="13" />
+          <State name="14" />
+          <State name="15" />
+          <State name="16" />
+          <State name="17" />
+          <State name="18" />
+          <State name="19" />
+          <State name="20" />
+          <State name="21" />
+          <State name="22" />
+          <State name="23" />
+        </States>
+      </Variable>
+      <Variable name="AcousticSignals" type="finiteStates" role="chance">
+        <Coordinates x="890" y="270" />
+        <States>
+          <State name="no" />
+          <State name="microwave" />
+          <State name="tv" />
+          <State name="inductionPlaque" />
+          <State name="exitDoor" />
+          <State name="cistern" />
+          <State name="entranceDoor" />
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="HumanLocalization" />
+        <Variable name="ADL" />
+      </Link>
+      <Link directed="true">
+        <Variable name="TimeOfDay" />
+        <Variable name="HumanLocalization" />
+      </Link>
+      <Link directed="true">
+        <Variable name="AcousticSignals" />
+        <Variable name="HumanLocalization" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="HumanLocalization" />
+          <Variable name="TimeOfDay" />
+          <Variable name="AcousticSignals" />
+        </Variables>
+        <Values>0.023 0.0 0.042 0.17 0.765 0.022 0.0 0.0 0.042 0.936 0.0218 0.0 0.0 0.0212 0.957 0.022 0.0 0.0 0.021 0.957 0.022 0.0 0.021 0.0 0.957 0.0435 0.0 0.0425 0.0 0.914 0.087 0.17 0.063 0.042 0.638 0.157 0.1 0.17 0.127 0.446 0.5327 0.0851 0.212 0.0851 0.0851 0.7678 0.021 0.063 0.127 0.0212 0.8307 0.021 0.042 0.0851 0.0212 0.8515 0.0 0.0 0.106 0.0425 0.8512 0.0 0.0212 0.0851 0.0425 0.7666 0.042 0.0638 0.0851 0.0425 0.6597 0.0 0.234 0.0851 0.0212 0.598 0.0 0.127 0.212 0.063 0.5759 0.021 0.063 0.255 0.0851 0.5966 0.0212 0.0212 0.276 0.085 0.596 0.021 0.021 0.319 0.043 0.3411 0.0638 0.1276 0.425 0.0425 0.234 0.085 0.213 0.425 0.043 0.042 0.064 0.447 0.383 0.064 0.043 0.021 0.064 0.617 0.255 0.0225 0.0 0.0425 0.404 0.531 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.01 0.05 0.84 0.05 0.05 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.303 0.0355 0.4305 0.1635 0.0675 0.303 0.0355 0.4305 0.1845 0.0465 0.175 0.0565 0.484 0.238 0.0465 0.122 0.0675 0.5265 0.2375 0.0465 0.026 0.057 0.6435 0.2165 0.057 0.0265 0.0355 0.452 0.3335 0.1525 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.01 0.05 0.05 0.84 0.05 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.303 0.0355 0.0355 0.5585 0.0675 0.303 0.0355 0.0355 0.5795 0.0465 0.175 0.0565 0.089 0.633 0.0465 0.122 0.0675 0.1315 0.6325 0.0465 0.026 0.057 0.2485 0.6115 0.057 0.0265 0.0355 0.057 0.7285 0.1525 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.01 0.05 0.84 0.05 0.05 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.303 0.0355 0.4305 0.1635 0.0675 0.303 0.0355 0.4305 0.1845 0.0465 0.175 0.0565 0.484 0.238 0.0465 0.122 0.0675 0.5265 0.2375 0.0465 0.026 0.057 0.6435 0.2165 0.057 0.0265 0.0355 0.452 0.3335 0.1525 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.8 0.05 0.05 0.05 0.05 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.698 0.0355 0.0355 0.1635 0.0675 0.698 0.0355 0.0355 0.1845 0.0465 0.57 0.0565 0.089 0.238 0.0465 0.122 0.4625 0.1315 0.2375 0.0465 0.421 0.057 0.2485 0.2165 0.057 0.4215 0.0355 0.057 0.3335 0.1525 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.01 0.84 0.05 0.05 0.05 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.303 0.4305 0.0355 0.1635 0.0675 0.303 0.4305 0.0355 0.1845 0.0465 0.175 0.4515 0.089 0.238 0.0465 0.01 0.84 0.05 0.05 0.05 0.026 0.452 0.2485 0.2165 0.057 0.0265 0.4305 0.057 0.3335 0.1525 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.2 0.3032 0.1342 0.1342 0.2622 0.1662 0.304 0.134 0.134 0.283 0.145 0.175 0.15525 0.18775 0.33675 0.14525 0.122 0.16625 0.23025 0.33625 0.14525 0.026 0.15575 0.34725 0.31525 0.15575 0.0265 0.13425 0.15575 0.43225 0.25125 0.2 0.2 0.2 0.2 0.2</Values>
+      </Potential>
+      <Potential type="Uniform" role="conditionalProbability">
+        <Variables>
+          <Variable name="ADL" />
+          <Variable name="HumanLocalization" />
+        </Variables>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="TimeOfDay" />
+        </Variables>
+        <Values>0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685 0.041666666666666685</Values>
+      </Potential>
+      <Potential type="Uniform" role="conditionalProbability">
+        <Variables>
+          <Variable name="AcousticSignals" />
+        </Variables>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>
