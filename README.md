@@ -18,6 +18,7 @@ Requeriments:
  - Py4J [2]
  - OpenMarkov repos [1]
  - ExampleApi repo
+ - OpenMarkov-roswrap
 
 Install Eclipse and Py4J:
 - sudo snap install eclipse --classic
@@ -40,9 +41,22 @@ Import Py4J to ExampleApi:
 - Copy or Drag&Drop the .jar in the folder created before.
 - In Eclipse, Right Click in the .jar copied > Build Path > Add to Build Path
 
-Ready to execute de API:
+Clone and compile OpenMarkov-roswrap:
+- Clone this repo in your ROS workspace and compile - catkin_make
+
+# Testing the API
+Execute OpenMarkov Eclipse API:
 - Open the ExampleAPI in Eclipse and Run.
 
+ROS:
+- Init a roscore
+- Execute the openMarkov-roswrap: rosrun openmarkov_roswrap openMarkovROS_node.py
+
+Getting probs:
+- rosservice call /openmarkov_ros/get_var_probs "variable: 'HumanLocalization'"
+
+Setting a new finding:
+- rosservice call /openmarkov_ros/set_finding "variable: 'AcousticSignals' state: 'microwave'"
 
 
 [1] http://www.openmarkov.org/
